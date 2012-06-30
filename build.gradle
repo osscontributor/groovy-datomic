@@ -1,0 +1,41 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+ext.groovyDatomicVersion = '1.0.0.BUILD-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.0.0'
+
+    compile fileTree(dir: 'lib', includes: ['*.jar'])
+
+    runtime 'ch.qos.logback:logback-classic:1.0.1',
+            'com.amazonaws:aws-java-sdk:1.3.0',
+            'com.google.guava:guava:r09',
+            'com.h2database:h2:1.3.165',
+            'commons-codec:commons-codec:1.6',
+            'org.apache.lucene:lucene-core:3.6.0',
+            'org.clojure:clojure:1.4.0',
+            'org.clojure:java.jdbc:0.1.3',
+            'org.hornetq:hornetq-core:2.2.2.Final',
+            'org.slf4j:slf4j-api:1.6.6'
+}
+
+task groovyListTitles(type: JavaExec, dependsOn: 'classes') {
+    main = 'comicdb.demo.GroovyListTitles'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task javaListTitles(type: JavaExec, dependsOn: 'classes') {
+    main = 'comicdb.demo.JavaListTitles'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+jar {
+    excludes = ['*comic*']
+    version = groovyDatomicVersion
+}
+
+

@@ -1,0 +1,4 @@
+moduleName = DatomicExtension
+moduleVersion = 1.0
+staticExtensionClasses = groovy.datomic.extension.DatomicPeerExtension
+

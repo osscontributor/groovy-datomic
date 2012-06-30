@@ -1,0 +1,75 @@
+[
+
+{:comic/name "Batman" :db/id #db/id[:db.part/user -1000001]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 1  :issue/name "Knife Trick"          }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 2  :issue/name "Trust Fall"           }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 3  :issue/name "The Thirteenth Hour"  }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 4  :issue/name "Face The Court"       }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 5  :issue/name "Face The Court"       }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 6  :issue/name "Beneath The Glass"    }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 7  :issue/name "The Talons Strike"    }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 8  :issue/name "Attack on Wayne Manor"}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 9  :issue/name "Night Of The Owls"    }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000001] :issue/number 10 :issue/name "Assault On The Court" }
+
+{:comic/name "Batman And Robin" :db/id #db/id[:db.part/user -1000002]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 1  :issue/name "Born To Kill"             }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 2  :issue/name "Bad Blood"                }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 3  :issue/name "Knightmoves"              }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 4  :issue/name "Matter Of Trust"          }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 5  :issue/name "Mutineer"                 }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 6  :issue/name "The Real Me"              }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 7  :issue/name "Driven"                   }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 8  :issue/name "Black Dawn"               }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 9  :issue/name "Robin Hears A Hoo"        }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000002] :issue/number 10 :issue/name "Terminus: Scar Of The Bat"}
+
+{:comic/name "Batman Incorporated" :db/id #db/id[:db.part/user -1000003]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000003] :issue/number 1 :issue/name "Leviathan, Part One"}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000003] :issue/number 2 :issue/name "Leviathan, Part Two"}
+
+{:comic/name "Batman: The Dark Knight" :db/id #db/id[:db.part/user -1000004]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 1 :issue/name "Knight Terrors"           }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 4 :issue/name "Welcome To The Jungle"    }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 5 :issue/name "Handful Of Dust"          }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 6 :issue/name "Run Rabbit Run"           }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 7 :issue/name "The Final Curtain"        }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 8 :issue/name "The Madness"              }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000004] :issue/number 9 :issue/name "I Can No Longer Be Broken"}
+
+{:comic/name "Before Watchmen: Comedian" :db/id #db/id[:db.part/user -1000005]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000005] :issue/number 1 :issue/name "The Curse Of The Crimson Corsair"}
+
+{:comic/name "Before Watchmen: Minutemen" :db/id #db/id[:db.part/user -1000006]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000006] :issue/number 1 :issue/name "The Minute Of Truth: Chapter One"}
+
+{:comic/name "Before Watchmen: Nite Owl" :db/id #db/id[:db.part/user -1000007]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000007] :issue/number 1 :issue/name "No Such Thing As A Free Lunch"}
+
+{:comic/name "Before Watchmen: Silk Spectre" :db/id #db/id[:db.part/user -1000008]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000008] :issue/number 1 :issue/name "Mean Goodbye"}
+
+{:comic/name "Detective Comics" :db/id #db/id[:db.part/user -1000009]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 1  :issue/name "#1"                    }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 2  :issue/name "Playtime's Over"       }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 3  :issue/name "Cold Blood"            }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 4  :issue/name "The Main Event"        }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 5  :issue/name "Wheel Of Misfortune"   }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 6  :issue/name "Kill Game"             }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 7  :issue/name "The Snake And The Hawk"}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 8  :issue/name "Scare Tactics"         }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 9  :issue/name "The Owls Take Arkham"  }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000009] :issue/number 10 :issue/name "On The Brink"          }
+
+{:comic/name "Earth 2" :db/id #db/id[:db.part/user -1000010]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000010] :issue/number 1 :issue/name "The Price Of Victory"}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000010] :issue/number 2 :issue/name "Age Of Wonders"      }
+
+{:comic/name "Watchmen" :db/id #db/id[:db.part/user -1000011]}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000011] :issue/number 4  :issue/name "Watchmaker"                }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000011] :issue/number 5  :issue/name "Fearful Symmetry"          }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000011] :issue/number 6  :issue/name "The Abyss Gazes Also"      }
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000011] :issue/number 9  :issue/name "The Darkness Of Mere Being"}
+{:db/id #db/id[:db.part/user] :issue/comic #db/id[:db.part/user -1000011] :issue/number 12 :issue/name "A Stronger Loving World"   }
+
+]
