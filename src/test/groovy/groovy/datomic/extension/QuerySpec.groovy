@@ -69,7 +69,8 @@ class QuerySpec extends Specification {
         when:
         def issueNumber
         Peer.open(comicDbUri) {
-            def results = q('[:find ?issue :where [?issue :issue/name "The Final Curtain"]]') as List
+
+            def results = q('[:find ?issue :in $ ?issueName :where [?issue :issue/name ?issueName]]', ['The Final Curtain']) as List
             def issueEntity = entity(results[0][0])
             issueNumber = issueEntity.get(':issue/number')
         }
