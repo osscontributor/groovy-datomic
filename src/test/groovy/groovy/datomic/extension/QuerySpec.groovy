@@ -64,4 +64,17 @@ class QuerySpec extends Specification {
                               'Earth 2',
                               'Watchmen'] as SortedSet
     }
+
+    void 'Test entity method'() {
+        when:
+        def issueNumber
+        Peer.open(comicDbUri) {
+            def results = q('[:find ?issue :where [?issue :issue/name "The Final Curtain"]]') as List
+            def issueEntity = entity(results[0][0])
+            issueNumber = issueEntity.get(':issue/number')
+        }
+
+        then:
+        7 == issueNumber
+    }
 }
