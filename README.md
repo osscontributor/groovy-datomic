@@ -197,13 +197,10 @@ describes basic usage of the extension query API.
 API Implementation Summary
 ------------------------------------
 
-The only method provided by the extension api is the `open` method
-which is added to the `datomic.Peer` class.  All of the other methods 
-and properties provided by the library are provided via a closure
-delegate which is assigned to the closure which is passed as the
-second argument to the `open` method.
+The extension api provdes a static `open` method
+which is added to the `datomic.Peer` class.
 
-The extension API is defined by the `groovy.datomic.extension.DatomicPeerExtension` 
+The `Peer` extension API is defined by the `groovy.datomic.extension.DatomicPeerExtension` 
 class which is defined in [src/main/groovy/groovy/datomic/extension/DatomicPeerExtension.groovy](groovy-datomic/tree/master/src/main/groovy/groovy/datomic/extension/DatomicPeerExtension.groovy).
 
     package groovy.datomic.extension
@@ -238,13 +235,21 @@ an optional boolean and a `Closure` argument.  This allows for the following.
         // ....
     }
 
-The Groovy runtime needs to know about this extension class and the way
+The extension api also adds a convenience method to the
+`datomic.query.EntityMap` class which simplifies retrieving attributes from
+entities.  In addition to the standard `comicEntity.get(':comic/name')` the extension supports
+`comicEntity[':comic/name']`.
+
+The `EntityMap` extension API is defined by the `groovy.datomic.extension.EntityMapExtension` 
+class which is defined in [src/main/groovy/groovy/datomic/extension/EntityMapExtension.groovy](groovy-datomic/tree/master/src/main/groovy/groovy/datomic/extension/EntityMapExtension.groovy).
+The Groovy runtime needs to know about this extension classes and the way
 to make that happen is to define a file named `META-INF/services/org.codehaus.groovy.runtime.ExtensionModule`
 which contains metadata about extensions provided by this library.  The file at [src/main/resources/META-INF/services/org.codehaus.groovy.runtime.ExtensionModule](groovy-datomic/tree/master/src/main/resources/META-INF/services/org.codehaus.groovy.runtime.ExtensionModule) looks like this.
 
     moduleName = DatomicExtension
     moduleVersion = 1.0
     staticExtensionClasses = groovy.datomic.extension.DatomicPeerExtension
+    extensionClasses = groovy.datomic.extension.EntityMapExtension
 
 More details about the new extension mechanism are described at http://www.infoq.com/articles/new-groovy-20.
 
