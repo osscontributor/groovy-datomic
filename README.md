@@ -189,7 +189,10 @@ is the query string.  In this case the query string expects an input value,
 The third argument again is a closure which will be executed once for each
 set of results returned from the query.
 
-Extension API Implementation Summary
+The specification at [src/test/groovy/groovy/datomic/extendsion/QuerySpec.groovy](groovy-datomic/tree/master/src/test/groovy/groovy/datomic/extension/QuerySpec.groovy)
+describes basic usage of the extension query API.
+
+API Implementation Summary
 ------------------------------------
 
 The only method provided by the extension api is the `open` method
