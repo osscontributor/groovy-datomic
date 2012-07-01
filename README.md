@@ -203,11 +203,10 @@ and a single query with something like this:
         load '/comic-data.dtm'
 
         // retrieve comics
-        q('[:find ?comic :where [?comic :comic/name ?comicName]]') { comic ->
+        q('[:find ?comic :where [?comic :comic/name]]') { comic ->
             comicEntity = entity(comic)
-            comicName = comicEntity[':comic/name']
 
-            println "\nTitle: ${comicName}"
+            println "\nTitle: ${comicEntity[':comic/name']}"
 
             issueEntities = new ArrayList(comicEntity[':issue/_comic'])
             issueEntities.sort { it[':issue/number'] }
