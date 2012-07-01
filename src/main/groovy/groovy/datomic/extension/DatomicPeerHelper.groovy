@@ -36,10 +36,18 @@ class DatomicPeerHelper {
         db.entity(arg)
     }
 
+    def q(String query, List args = []) {
+        q query, args, null
+    }
+
     def q(String query, List args = [], Closure closure) {
-        Peer.q(query, db, *args).each { result ->
-            closure(*result)
+        def results = Peer.q(query, db, *args)
+        if(closure) {
+            results.each { result ->
+                closure(*result)
+            }
         }
+        results
     }
 }
 
