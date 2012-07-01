@@ -250,7 +250,8 @@ following command.
 
 That should create a jar file at `build/libs/groovy-datomic-1.0.0.BUILD-SNAPSHOT.jar`.
 Simply add that jar to any Groovy project's classpath and the extension will be
-available to that program.
+available to that program. Note that this extension requires Groovy 2.
+
 
 
 
