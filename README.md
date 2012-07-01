@@ -209,21 +209,14 @@ and a single query with something like this:
 
             println "\nTitle: ${comicName}"
 
-            // A map to sort issues by issue number
-            issues = new TreeMap()
-
-            issueEntities = comicEntity[':issue/_comic']
+            issueEntities = new ArrayList(comicEntity[':issue/_comic'])
+            issueEntities.sort { it[':issue/number'] }
 
             issueEntities.each { issueEntity ->
-                issues[issueEntity[':issue/number']] = issueEntity[':issue/name']
-            }
-            issues.each { number, name ->
-                println "\tIssue #${number} - ${name}"
+                println "\tIssue #${issueEntity[':issue/number']} - ${issueEntity[':issue/name']}"
             }
         }
     }
-
-
 
 The specification at [src/test/groovy/groovy/datomic/extension/QuerySpec.groovy](groovy-datomic/tree/master/src/test/groovy/groovy/datomic/extension/QuerySpec.groovy)
 describes basic usage of the extension query API.
