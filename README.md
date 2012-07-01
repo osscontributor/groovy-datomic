@@ -149,8 +149,6 @@ The code is available in the [src/main/java/comicdb/demo/JavaListTitles.java](gr
 The extension API simplifies that to allow the following Groovy code to
 accomplish the same thing.
 
-    package comicdb.demo
-
     import datomic.Peer
 
     uri = 'datomic:mem://comics'
@@ -190,6 +188,42 @@ is the query string.  In this case the query string expects an input value,
 `?comic`. The second argument is a list of all of the query input values. 
 The third argument again is a closure which will be executed once for each
 set of results returned from the query.
+
+Note that the code above is structured the way that it is to demonstrate
+parameterized query usage.  That code could be simplified to use entities
+and a single query with something like this:
+
+    import datomic.Peer
+
+    uri = 'datomic:mem://comics'
+
+    Peer.open(uri, true) {
+        // load the schema and the data
+        load '/comic-schema.dtm'
+        load '/comic-data.dtm'
+
+        // retrieve comics
+        q('[:find ?comic :where [?comic :comic/name ?comicName]]') { comic ->
+            comicEntity = entity(comic)
+            comicName = comicEntity[':comic/name']
+
+            println "\nTitle: ${comicName}"
+
+            // A map to sort issues by issue number
+            issues = new TreeMap()
+
+            issueEntities = comicEntity[':issue/_comic']
+
+            issueEntities.each { issueEntity ->
+                issues[issueEntity[':issue/number']] = issueEntity[':issue/name']
+            }
+            issues.each { number, name ->
+                println "\tIssue #${number} - ${name}"
+            }
+        }
+    }
+
+
 
 The specification at [src/test/groovy/groovy/datomic/extension/QuerySpec.groovy](groovy-datomic/tree/master/src/test/groovy/groovy/datomic/extension/QuerySpec.groovy)
 describes basic usage of the extension query API.
