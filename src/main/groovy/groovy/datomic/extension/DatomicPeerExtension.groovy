@@ -18,8 +18,10 @@ import datomic.Peer
 
 class DatomicPeerExtension {
 
-    static open(Peer selfClass, String uri, Closure closure) {
-        Peer.createDatabase(uri)
+    static open(Peer selfClass, String uri, boolean create = false, Closure closure) {
+        if(create) {
+            Peer.createDatabase(uri)
+        }
         def conn = Peer.connect(uri)
         def helper = new DatomicPeerHelper(conn: conn)
         closure.delegate = helper

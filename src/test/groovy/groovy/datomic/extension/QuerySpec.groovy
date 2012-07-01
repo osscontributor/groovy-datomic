@@ -10,7 +10,7 @@ class QuerySpec extends Specification {
     def comicDbUri = 'datomic:mem://comics'
 
     def setupSpec() {
-        Peer.open(comicDbUri) {
+        Peer.open(comicDbUri, true) {
             load '/comic-schema.dtm'
             load '/comic-data.dtm'
         }

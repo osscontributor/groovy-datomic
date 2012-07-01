@@ -18,7 +18,7 @@ import datomic.Peer
 
 uri = 'datomic:mem://comics'
 
-Peer.open(uri) {
+Peer.open(uri, true) {
 	// load the schema and the data
 	load '/comic-schema.dtm'
 	load '/comic-data.dtm'

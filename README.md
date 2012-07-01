@@ -66,17 +66,19 @@ accomplish the same thing.
 
     uri = 'datomic:mem://comics'
 
-    Peer.open(uri) {
+    Peer.open(uri, true) {
     	// load the schema and the data
     	load '/comic-schema.dtm'
     	load '/comic-data.dtm'
     }
 
 The Groovy code shown there is invoking a static method on the `datomic.Peer`
-class named `open` which accepts 2 arguments.  The first argument is a string
-containing a valid database uri and the second argument is a closure which
-will be executed in a context which provides access to useful properties and
-methods for interacting with datomic. 
+class named `open` which accepts 3 arguments.  The first argument is a string
+containing a valid database uri.  The second argument is an optional boolean
+which indicates if the database should be created or not.  The default is
+`false`.  The final argument is a closure which will be executed in a context
+which provides access to useful properties and methods for interacting with
+datomic. 
 
 The Java code below will send queries to the datomic database to retrieve
 information about comics and issues that are in the database and print
@@ -153,7 +155,7 @@ accomplish the same thing.
 
     uri = 'datomic:mem://comics'
 
-    Peer.open(uri) {
+    Peer.open(uri, true) {
         // load the schema and the data
         load '/comic-schema.dtm'
         load '/comic-data.dtm'
@@ -210,8 +212,10 @@ class which is defined in [src/main/groovy/groovy/datomic/extension/DatomicPeerE
 
     class DatomicPeerExtension {
 
-        static open(Peer selfClass, String uri, Closure closure) {
-            Peer.createDatabase(uri)
+        static open(Peer selfClass, String uri, boolean create = false, Closure closure) {
+            if(create) {
+                Peer.createDatabase(uri)
+            }
             def conn = Peer.connect(uri)
             def helper = new DatomicPeerHelper(conn: conn)
             closure.delegate = helper
@@ -223,8 +227,12 @@ The extension class provides a single method.  The first argument to the
 method, in this case the `Peer` argument, represents which class this
 extension method should be added to.  The rest of the arguments are the
 arguments that the extension method will accept.  This extension
-effectively adds an `open` method to the `Peer` class which accepts a `String` and
-a `Closure` argument.  This allows for the following.
+effectively adds an `open` method to the `Peer` class which accepts a `String`,
+an optional boolean and a `Closure` argument.  This allows for the following.
+
+    Peer.open(uri, true) {
+        // ....
+    }
 
     Peer.open(uri) {
         // ....
