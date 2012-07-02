@@ -180,7 +180,7 @@ That code is available in the [src/main/groovy/comicdb/demo/GroovyListTitles.gro
 The first query invocation supplies 2 arguments.  The first argument is the
 query string and the second argument is a closure which will be executed once
 for each set of results returned from the query.  In this case 2 elements are
-are being returned from the query, `?comic` and `?comicName`.  Those values
+being returned from the query, `?comic` and `?comicName`.  Those values
 are being passed into the closure.
 
 The second query invocation supplies 3 arguments.  The first argument again
@@ -221,7 +221,7 @@ The specification at [src/test/groovy/groovy/datomic/extension/QuerySpec.groovy]
 describes basic usage of the extension query API.
 
 API Implementation Summary
-------------------------------------
+--------------------------
 
 The extension api provdes a static `open` method
 which is added to the `datomic.Peer` class.
@@ -268,7 +268,8 @@ entities.  In addition to the standard `comicEntity.get(':comic/name')` the exte
 
 The `EntityMap` extension API is defined by the `groovy.datomic.extension.EntityMapExtension` 
 class which is defined in [src/main/groovy/groovy/datomic/extension/EntityMapExtension.groovy](groovy-datomic/tree/master/src/main/groovy/groovy/datomic/extension/EntityMapExtension.groovy).
-The Groovy runtime needs to know about this extension classes and the way
+
+The Groovy runtime needs to know about these extension classes and the way
 to make that happen is to define a file named `META-INF/services/org.codehaus.groovy.runtime.ExtensionModule`
 which contains metadata about extensions provided by this library.  The file at [src/main/resources/META-INF/services/org.codehaus.groovy.runtime.ExtensionModule](groovy-datomic/tree/master/src/main/resources/META-INF/services/org.codehaus.groovy.runtime.ExtensionModule) looks like this.
 
@@ -292,7 +293,9 @@ following command.
 
 That should create a jar file at `build/libs/groovy-datomic-1.0.0.BUILD-SNAPSHOT.jar`.
 Simply add that jar to any Groovy project's classpath and the extension will be
-available to that program. Note that this extension requires Groovy 2.
+available to that program.
+
+Note that this extension requires Groovy 2.
 
 
 
