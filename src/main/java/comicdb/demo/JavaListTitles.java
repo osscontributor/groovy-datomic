@@ -69,5 +69,6 @@ public class JavaListTitles {
 				System.out.println("\tIssue #" + issueNumber + " - " + issueName);
 			}
 		}
+        Peer.shutdown(true);
 	}
 }

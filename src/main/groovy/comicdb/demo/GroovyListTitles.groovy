@@ -39,4 +39,5 @@ Peer.open(uri, true) {
 		}
 	}
 }
+Peer.shutdown(true)
 
