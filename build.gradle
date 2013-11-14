@@ -4,12 +4,13 @@ ext.groovyDatomicVersion = '1.0.0.BUILD-SNAPSHOT'
 
 repositories {
     mavenCentral()
-    mavenRepo url: 'http://clojars.org/repo'
+    maven {
+        url 'http://clojars.org/repo'
+    }
 }
 
 dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.9'
-
+    compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.9'
     compile 'org.clojure:clojure:1.5.1'
     compile 'com.datomic:datomic-free:0.8.4260'
 
