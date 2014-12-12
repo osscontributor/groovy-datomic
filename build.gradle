@@ -12,7 +12,7 @@ repositories {
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.1.9'
     compile 'org.clojure:clojure:1.5.1'
-    compile 'com.datomic:datomic-free:0.8.4260'
+    compile 'com.datomic:datomic-free:0.9.5067'
 
     testCompile('org.spockframework:spock-core:0.7-groovy-2.0') {
         exclude module: 'groovy-all'
