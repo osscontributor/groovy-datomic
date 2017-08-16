@@ -14,33 +14,39 @@
  */
 package groovy.datomic.extension
 
+import datomic.Connection
+import datomic.Database
+import datomic.Entity
 import datomic.Peer
 import datomic.Util
+import groovy.transform.CompileDynamic
+import groovy.transform.CompileStatic
 
-
+@CompileStatic
 class DatomicPeerHelper {
-    def conn
+    Connection conn
 
-    def load(resourceName) {
-        DatomicPeerHelper.getResourceAsStream(resourceName).withReader { reader ->
-            def tx = Util.readAll(reader).get(0)
+    void load(String resourceName) {
+        DatomicPeerHelper.getResourceAsStream(resourceName).withReader { Reader reader ->
+            List tx = Util.readAll(reader).get(0)
             conn.transact(tx).get()
         }
     }
 
-    def getDb() {
+    Database getDb() {
         conn.db()
     }
 
-    def entity(arg) {
+    Entity entity(arg) {
         db.entity(arg)
     }
 
-    def q(String query, List args = []) {
+    Collection<List<Object>> q(String query, List args = []) {
         q query, args, null
     }
 
-    def q(String query, List args = [], Closure closure) {
+    @CompileDynamic
+    Collection<List<Object>> q(String query, List args = [], Closure closure) {
         def results = Peer.q(query, db, *args)
         if(closure) {
             results.each { result ->

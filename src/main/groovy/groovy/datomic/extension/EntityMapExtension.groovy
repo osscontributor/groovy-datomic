@@ -15,7 +15,9 @@
 package groovy.datomic.extension
 
 import datomic.query.EntityMap
+import groovy.transform.CompileStatic
 
+@CompileStatic
 class EntityMapExtension {
     static getAt(EntityMap entityMap, String attributeDescriptor) {
         entityMap.get attributeDescriptor

@@ -15,10 +15,12 @@
 package groovy.datomic.extension
 
 import datomic.Peer
+import groovy.transform.CompileStatic
 
+@CompileStatic
 class DatomicPeerExtension {
 
-    static open(Peer selfClass, String uri, boolean create = false, Closure closure) {
+    static open(Peer selfClass, String uri, boolean create = false, @DelegatesTo(DatomicPeerHelper) Closure closure) {
         if(create) {
             Peer.createDatabase(uri)
         }
