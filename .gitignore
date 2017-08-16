@@ -1,6 +1,8 @@
+*.iml
 *.swp
 .gradle
-
+.idea/
+out/
 
 build/
 .classpath
